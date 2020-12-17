@@ -1,0 +1,26 @@
+<h1 id="tableLabel">Список булочек</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!bulochki"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="bulochki">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start Price</th>
+      <th>Current Price</th>
+      <th>Future Price</th>
+      <th>Секунд до изменения</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bulochka of bulochki">
+      <td>{{ bulochka.type.name }}</td>
+      <td>{{ bulochka.startPrice }}</td>
+      <td>{{ bulochka.currentPrice }}</td>
+      <td>{{ bulochka.futurePrice }}</td>
+      <td>{{ bulochka.secToChange }}</td>
+    </tr>
+  </tbody>
+</table>
